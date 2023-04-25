@@ -17,11 +17,11 @@ print(objectof.name, objectof.age)
 object2 = Person('Jake', 30)
 print(object2.name, object2.age)
 
-objectof._isprogrammer = True
-print(objectof._isprogrammer)
+objectof._isprogrammer = True # type: ignore
+print(objectof._isprogrammer) # type: ignore
 
 # del(objectof._isprogrammer)
 
-objectof.show()
+object2.show()
 
 

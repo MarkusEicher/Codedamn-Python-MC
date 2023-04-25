@@ -1,13 +1,13 @@
-# # User input sample code without walrus operator
-# user_input = input("Enter something (or press enter to quit): ")
-# while user_input != "":
-#     print("You entered:", user_input)
-#     user_input = input("Enter something (or press enter to quit): ")
+# User input sample code without walrus operator
+user_input = input("Enter something (or press enter to quit): ")
+while user_input != "":
+    print("You entered:", user_input)
+    user_input = input("Enter something (or press enter to quit): ")
 
 
-# # Walrus operator sample code makes it easier to read
-# while (user_input := input("Enter something (or press enter to quit): ")) != "":
-#     print("You entered:", user_input)
+# Walrus operator sample code makes it easier to read
+while (user_input := input("Enter something (or press enter to quit): ")) != "":
+    print("You entered:", user_input)
 
 
 friends = {

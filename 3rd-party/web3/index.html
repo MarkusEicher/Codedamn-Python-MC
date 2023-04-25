@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metamask Connection Test</title>
+  <script type="text/javascript">
+    async function connectMetamask() {
+      // Check if Metamask is installed
+      if (typeof window.ethereum === 'undefined') {
+        console.log('Metamask not detected');
+        return null;
+      }
+
+      // Request access to the user's accounts
+      try {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        console.log('Metamask connected:', accounts[0]);
+        return accounts[0];
+      } catch (err) {
+        console.error('Metamask connection error:', err);
+        return null;
+      }
+    }
+
+    async function testMetamask() {
+      const address = await connectMetamask();
+      if (address) {
+        alert(`Connected to Metamask with address: ${address}`);
+      } else {
+        alert('Could not connect to Metamask');
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Metamask Connection Test</h1>
+  <p>Click the button below to test your Metamask connection:</p>
+  <button onclick="testMetamask()">Test Connection</button>
+</body>
+</html>

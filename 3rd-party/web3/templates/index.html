@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+  </head>
+  <body>
+    <h1>Welcome to My Website</h1>
+    <button onclick="connectWallet()">Connect Wallet</button>
+    <script>
+      async function connectWallet() {
+        if (window.ethereum) {
+          // Request account access if needed
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          console.log("Connected to wallet!");
+          // Reload the page to update the UI
+          location.reload();
+        } else {
+          console.log("No wallet found");
+        }
+      }
+    </script>
+  </body>
+</html>
