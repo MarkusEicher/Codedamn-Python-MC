@@ -1,6 +1,24 @@
 class Cart:
-    def __init__(self):
+
+    _instance = None
+
+    def __new__(cls):
+        # print("new called")
+        if cls._instance is None:
+            # print("Creating new instance")
+            cls._instance = super().__new__(cls)
+            # print("Created new instance")
+            cls._instance._init()
+
+        return cls._instance
+    
+    def _init(self):
+        print("_init called")
         self._products = []
+
+    # def __init__(self):
+    #     print("init called")
+    #     self._products = []
 
     def add_product(self, product):
         self._products.append(product)

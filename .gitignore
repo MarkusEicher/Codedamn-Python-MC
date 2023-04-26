@@ -3,3 +3,4 @@ test
 env_test.py
 __pycache__
 .ipynb_checkpoints
+.pyc
